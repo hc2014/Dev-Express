@@ -22,7 +22,7 @@ private void GridKeyPress(BaseView sender, KeyEventArgs e)
   }
 ```
 
-**2.**删除Grid头部上的GroupBox<br />
+**2.**删除Grid头部上的GroupBox[图片](./img/1.png)<br />
 操作方式:<br />
 * 1.在Grid上点击Run Designer 进入设计界面
 * 2.左上角 选择 Views 视图 找到 OptionsVies
