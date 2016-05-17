@@ -80,4 +80,25 @@ private void gvTradeList_CustomDrawCell(object sender, DevExpress.XtraGrid.Views
   }
 ```
 
-
+**6.**行双击事件<br />
+行双击事件的话,如果点击在Grid的空白地方也是会触发该事件的,所以要做一些处理
+```
+ private void gvTradeList_DoubleClick(object sender, EventArgs e)
+  {
+    MouseEventArgs arg = e as MouseEventArgs;
+    if (arg == null)
+    {
+        return;
+    }
+    DevExpress.XtraGrid.Views.Grid.ViewInfo.GridHitInfo hInfo = gvTradeList.CalcHitInfo(new Point(arg.X, arg.Y));
+    //判断是否左键双击
+    if (arg.Button == MouseButtons.Left)
+    {
+        //判断光标是否在行内、判断光标是否在列内
+        if (hInfo.InRow && hInfo.Column != null)
+        {
+         //DoSomeThing
+        }
+    }
+  }
+```
