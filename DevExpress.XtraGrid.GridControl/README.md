@@ -45,3 +45,39 @@ private void gvTradeList_CustomColumnDisplayText(object sender, DevExpress.XtraG
    }
  }
 ```
+
+
+**4.**绘制单元格颜色<br />
+在View的CustomDrawCell时间中<br />
+```
+private void gvTradeList_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
+  {
+   if (gvTradeList.GetDataRow(e.RowHandle)["IsFreeze"].ToString() == "True")
+   {
+     //如果这里不去判断列名称的话即不去判断e.Column.Name，那么就是设置整行的颜色
+     e.Appearance.ForeColor = Color.White;
+   }
+  }
+```
+
+绘制单元格颜色跟下面的设置行颜色，本质的区别在于绘制是在Grid加载的时候执行的，所以只执行一次，但是下面的RowStyle方法是一直在<br />
+循环执行的,所以在程序执行的过程中Grid绑定的数据改变了,行颜色也会发生变化
+
+**5.**设置行颜色<br />
+在View的RowStyle事件中<br />
+```
+ private void gvTradeList_RowStyle(object sender, DevExpress.XtraGrid.Views.Grid.RowStyleEventArgs e)
+  {
+   DataRow dr = gvTradeList.GetDataRow(e.RowHandle);
+   if (dr == null)
+    {
+       return;
+    }
+    if (bool.Parse(dr["IsFreeze"].ToString())==True)
+    {
+        e.Appearance.ForeColor = Color.Magenta;
+    }
+  }
+```
+
+
