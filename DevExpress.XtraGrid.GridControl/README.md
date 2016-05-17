@@ -27,4 +27,3 @@ private void GridKeyPress(BaseView sender, KeyEventArgs e)
 * 1.在Grid上点击Run Designer 进入设计界面
 * 2.左上角 选择 Views 视图 找到 OptionsVies
 * 3.设置 ShowGroupPanel=False<br />
-[图片](./img/1.png)
