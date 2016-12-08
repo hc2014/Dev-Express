@@ -134,14 +134,14 @@ private void gvTradeList_CustomDrawCell(object sender, DevExpress.XtraGrid.Views
                 e.Info = new ToolTipControlInfo("我也不知道这个参数干嘛用的", GetChineseRate(rate));
             }
         }
-```然而  GetChineseRate（rate）,这个地方就是显示tooltic的提示文本，所以想把0.55显示成五五折，就要从这里动手
+```
+
+<br />
+然而  GetChineseRate（rate）,这个地方就是显示tooltic的提示文本，所以想把0.55显示成五五折，就要从这里动手
+<br />
 
 ```
-/// <summary>
-/// 根据数字获取汉字
-/// </summary>
-/// <param name="intRate"></param>
-/// <returns></returns>
+//根据数字获取汉字
 string GetChineseRate(int intRate)
 {
   string chineseRate = string.Empty;
@@ -150,11 +150,7 @@ string GetChineseRate(int intRate)
   return chineseRate;
 }
 
-/// <summary>
-/// 获取1-100数字转换汉字的字典集合
-/// </summary>
-/// <param name="intRate"></param>
-/// <returns></returns>
+//获取1-100数字转换汉字的字典集合
 Dictionary<int, string> GetRateDis()
 {
   Dictionary<int, string> dic = new Dictionary<int, string>();
@@ -183,9 +179,7 @@ Dictionary<int, string> GetRateDis()
   return dic;
 }
 
-/// <summary>
-/// 汉字、数字对比枚举
-/// </summary>
+//汉字、数字对比枚举
 enum NumToChinese
 {
   零 = 0,
