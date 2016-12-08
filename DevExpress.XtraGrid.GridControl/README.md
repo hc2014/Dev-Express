@@ -22,7 +22,7 @@ private void GridKeyPress(BaseView sender, KeyEventArgs e)
   }
 ```
 
-**2.**删除Grid头部上的GroupBox[图片](./img/1.png)中写着"Drag Column Header..."的地方<br />
+**2.**删除Grid头部上的GroupBox![](./img/1.png)中写着"Drag Column Header..."的地方<br />
 操作方式:<br />
 * 1.在Grid上点击Run Designer 进入设计界面
 * 2.左上角 选择 Views 视图 找到 OptionsView
@@ -101,4 +101,14 @@ private void gvTradeList_CustomDrawCell(object sender, DevExpress.XtraGrid.Views
         }
     }
   }
+```
+
+**7.**修改grid的tooltip<br />
+先看效果![](./img/4.png),要实现这一的效果就需要自定tooltip,图中把0.55的折扣率显示成五五折,这一个功能的实现方式，在这里一并说了！！！<br /><br/>
+首先.在工具栏找到 **ToolTipController**控件 放到界面中去名字为**MainGvTool**,然后设置**GridControl**的属性ToolTipController=MainGvTool.
+![](./img/3.png)![](./img/5.png)<br /><br />
+然后.在**MainGvTool**控件的**GetActiveObjectInfo**事件里面
+
+```
+
 ```
